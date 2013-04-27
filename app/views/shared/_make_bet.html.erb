@@ -1,0 +1,6 @@
+<%= form_for(@bet) do |f| %>
+  <div class="field">
+    <%= f.text_field :body, placeholder: "I bet that ..." %>
+  </div>
+  <%= f.submit "Post" %>
+<% end %>

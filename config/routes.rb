@@ -1,4 +1,8 @@
 Tvnexthack::Application.routes.draw do
+  root to: 'static#home'
+  resources :bets, only: [:create, :index, :show]
+
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

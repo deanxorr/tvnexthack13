@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  body: MyText
+  time: 1
+  tms_id: MyString
+
+two:
+  body: MyText
+  time: 1
+  tms_id: MyString
