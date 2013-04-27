@@ -1,0 +1,16 @@
+<img style="width:100%;" src="<%= @interactions.first['object']['images']['banner'] %>"></img>
+
+<table>
+<% @interactions.each do |i| %>
+<tr>
+  <td>
+    <img src="<%= i['user']['images']['avatar'] %>"></img>
+    <%= i['user']['username'] %>
+  </td>
+  <td>
+    <%= i['comment'] %>
+  </td>
+</tr>
+<% end %>
+</table>
+"comment", "timestamp", "object", "vote_count", "reply_count", "user", "action", "mentions", "id"
