@@ -1,7 +1,8 @@
 Tvnexthack::Application.routes.draw do
   root to: 'static#home'
   resources :bets, only: [:create, :index, :show]
-  match 'soundtracks/:entity' => 'soundtracks#show'
+  match ':entity/soundtrack' => 'soundtracks#show'
+  match ':entity/stream' => 'streams#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
