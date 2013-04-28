@@ -25,4 +25,9 @@ class Bet < ActiveRecord::Base
   validates :user_name, presence: true
   validates :user_email, presence: true, format: { with: VALID_EMAIL_REGEX }
   validates :wager, presence: true
+
+  def self.recent_bets(s_time, e_time)
+    @bet = Bet.where("time < ?", e_time).where("time > ?", s_time)
+  end
+
 end
