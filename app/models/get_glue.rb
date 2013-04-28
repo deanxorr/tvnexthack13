@@ -1,3 +1,5 @@
+require 'net/http'
+
 class GetGlue
   class << self
     BASE_URL = "http://api.getglue.com/v3/tv_shows/"
@@ -22,7 +24,7 @@ class GetGlue
     end
 
     def token_string
-      "access_token=#{TOKEN}"
+      "access_token=#{TOKEN}&format=json"
     end
   end
 end

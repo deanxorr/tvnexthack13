@@ -16,22 +16,6 @@
     <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
   <body>
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
-            <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Tvnexthack</a>
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span12">
@@ -39,11 +23,6 @@
           <%= yield %>
         </div>
       </div><!--/row-->
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-
     </div> <!-- /container -->
 
     <!-- Javascripts
