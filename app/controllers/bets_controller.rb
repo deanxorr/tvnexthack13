@@ -2,12 +2,8 @@ class BetsController < ApplicationController
   def index
   end
 
-  def show
-    @bet = Bet.find(params[:id])
-  end
-
   def recent
-    last_poll - params[:time]
+    last_poll = params[:time].to_i - 5
     @bets = Bet.get_recent(last_poll, params[:time])
   end
 

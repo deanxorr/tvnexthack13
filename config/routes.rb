@@ -1,6 +1,6 @@
 Tvnexthack::Application.routes.draw do
   root to: 'static#home'
-  resources :bets, only: [:create, :index, :show]
+  resources :bets, only: [:create]
   match ':entity/soundtrack' => 'soundtracks#show'
   match ':entity/stream' => 'streams#show'
   match '/viggle', to: 'static#viggle'
