@@ -12,65 +12,70 @@ function getDash(showName) {
     })};
 
 (function() {
+
+var timeOnPage = 0;
+setInterval(function () {
+    timeOnPage += 1;
+    console.log('TOP: ' + timeOnPage);
+}, 1000);
+
+
+function poll(offset) {
+    console.log("function offset called");
+    var time = offset + timeOnPage;
+    //  GET bets#show params[:time], return recentBets
+    appendBets();
+    setTimeout(poll, 5000);
+}
+
+function appendBets() {
+    console.log("function appendBets called");
+}
+
     function onBridgeIsReady() {
         // Display our apps title in the header bar
-            console.log("bridge is ready");
-            $('#status').append("bridge is ready");
-            console.log(VAPP);
-
             VAPP.setTitleBarTitle(function(message) {}, 'Reviews');
-
             VAPP.getCurrentShow(function (message) {
-
                 var showInfo = JSON.parse(message);
-
+                //  handle current show error
                 if (showInfo.status !== 'success') {
                     VAPP.showModal(function(message) {}, 'Oops ...', null, 'Unable to get show info.', 'Please try again.', false);
                     return;
                 }
-
                 // Name of the current show
                 var showName = showInfo.data.program_data.program_title;
                 console.log(showName);
                 getDash(showName);
                 $('#status').append(showName);
-                
-
                 // Display the show name in the sub header bar
                 VAPP.setTitleBarSubTitle(function(message) {}, showName);
-
-
                 //Check if user is checked in
                 VAPP.getCurrentShowCheckInOffset(function(message){
-
                     var checkInInfo = JSON.parse(message);
-
+                    //  handle checkin error
                     if (!checkInInfo.data.offset > 0) {
-
                         VAPP.showModal(function(message) {}, 'Oops ...', null, 'You are not checked into this show', 'Check in and then try again', false);
                         VAPP.close(function(m){});
                         return;
-
+                    } else {
+                        var offset = JSON.stringify(message.data.offset);
+                        poll(offset);
                     }
 
-                    var showNameEncoded = showName.replace(/ /g, '-').toLowerCase();
-
-                    var urlList = {
-                        'Metacritic' : 'http://www.metacritic.com/tv/' + showNameEncoded,
-                        'TV' : 'http://www.tv.com/shows/' + showNameEncoded,
-                        'MSN' : 'http://tv.msn.com/tv/series/' + showNameEncoded,
-                        'Jinni' : 'http://jinni.com/tv/' + showNameEncoded
-                    };
-
-                    for (url in urlList) {
-                        $('#reviews-list').append('<li><a href="' + urlList[url] + '">' + url + '</a></li>');
-                    };
-
+                    //  for linking to show resources
+                    // var showNameEncoded = showName.replace(/ /g, '-').toLowerCase();
+                    // var urlList = {
+                    //     'Metacritic' : 'http://www.metacritic.com/tv/' + showNameEncoded,
+                    //     'TV' : 'http://www.tv.com/shows/' + showNameEncoded,
+                    //     'MSN' : 'http://tv.msn.com/tv/series/' + showNameEncoded,
+                    //     'Jinni' : 'http://jinni.com/tv/' + showNameEncoded
+                    // };
+                    // for (url in urlList) {
+                    //     $('#reviews-list').append('<li><a href="' + urlList[url] + '">' + url + '</a></li>');
+                    // };
                 });
-            
 
-            });        
-
+            });
     }
 
     // Kick off script
