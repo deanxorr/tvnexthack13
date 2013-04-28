@@ -24,6 +24,8 @@
 
                 // Name of the current show
                 var showName = showInfo.data.program_data.program_title;
+                console.log(showName);
+                $('#status').append(showName);
                 
 
                 // Display the show name in the sub header bar
@@ -57,9 +59,6 @@
                     };
 
                 });
-
-            var show = VAPP.getCurrentShow(getUserInfoCallback);
-            $('#status').append(show);
             
 
             });        
