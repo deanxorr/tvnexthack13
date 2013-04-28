@@ -4,7 +4,7 @@
 <ul id="reviews-list"></ul>
 
 <script>
-function() {
+(function() {
     function onBridgeIsReady() {
         // Display our apps title in the header bar
             console.log("bridge is ready");
@@ -67,5 +67,5 @@ function() {
     document.addEventListener('VAPPReady', onBridgeIsReady, true);
     console.log("event listener set");
     $('#status').append("event listener set");
-};
+})();
 </script>
