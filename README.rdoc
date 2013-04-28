@@ -1,8 +1,11 @@
 #TVnexthack 2013
 ##_JP and Dean_
 
-#dashboard picture#
-![Dasbhoard](https://dl.dropboxusercontent.com/u/62813824/defiance_desktop_web.png)
+#desktop / laptop picture#
+![Dashboard](https://dl.dropboxusercontent.com/u/62813824/defiance_desktop_web.png)
+
+#mobile picture#
+![Mobile](https://pbs.twimg.com/media/BI9hQNkCcAAcUmi.png:large)
 
 
 
