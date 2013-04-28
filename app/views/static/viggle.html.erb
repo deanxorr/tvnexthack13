@@ -1,8 +1,11 @@
+<div id='better'><button>lalalala</button></div>
 <span id="status"></span>
 <p>List of review sites</p>
 <ul id="reviews-list"></ul>
 
 <script>
+$(document).ready( poll(6) )
+
 function getDash(showName) {
     $.ajax('dashboard/'+showName, {
         dataType : 'html'
@@ -10,8 +13,6 @@ function getDash(showName) {
         console.log(data);
         $("body").prepend(data);
     })};
-
-(function() {
 
 var timeOnPage = 0;
 setInterval(function () {
@@ -22,15 +23,19 @@ setInterval(function () {
 
 function poll(offset) {
     console.log("function offset called");
-    var time = offset + timeOnPage;
-    //  GET bets#show params[:time], return recentBets
-    appendBets();
+    var time = 6 + timeOnPage
+    appendBets(time);
     setTimeout(poll, 5000);
 }
 
-function appendBets() {
+function appendBets(time) {
     console.log("function appendBets called");
+    $.ajax('bets/'+time, {
+        dataType : "html"
+    }).done(function(data) { $("#better").html(data) } )
 }
+
+(function() {
 
     function onBridgeIsReady() {
         // Display our apps title in the header bar
