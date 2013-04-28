@@ -6,6 +6,11 @@ class BetsController < ApplicationController
     @bet = Bet.find(params[:id])
   end
 
+  def recent
+    last_poll - params[:time]
+    @bets = Bet.get_recent(last_poll, params[:time])
+  end
+
   def create
     @bet = Bet.new(params[:bet])
     if @bet.save
