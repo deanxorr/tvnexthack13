@@ -4,7 +4,7 @@ Tvnexthack::Application.routes.draw do
   match ':entity/soundtrack' => 'soundtracks#show'
   match ':entity/stream' => 'streams#show'
   match '/viggle', to: 'static#viggle'
-  match '/bets/:time', to: 'bets#show'
+  match '/bets/:time', to: 'bets#recent'
   match 'dashboard/:entity' => 'dashboards#show'
   match 'json/:entity' => 'dashboards#dash_json'
   # The priority is based upon order of creation:
