@@ -1,0 +1,22 @@
+<%= @tms[:desc] %><br/>
+<h3>Recommendations</h3>
+<ul>
+<% @tms[:recommendations].each do |rec| %>
+  <li><%= rec %>
+<% end %>
+</ul>
+<h3>Featuring</h3>
+<ul>
+<% @tms[:cast].each do |member| %>
+  <li><strong><%= member[:name] %></strong> as <strong><%= member[:character]%></strong></li>
+<% end %>
+</ul>
+<h3>Upcoming Showtimes:</h3>
+<table>
+<th>Time</th><th>Channel</th>
+<% @tms[:showings].each do |show| %>
+<tr>
+  <td><%= show[:start] %></td><td><%= show[:station] %></td>
+</tr>
+<% end %>
+</table>

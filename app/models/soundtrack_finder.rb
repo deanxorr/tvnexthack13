@@ -5,7 +5,7 @@ class SoundtrackFinder
   def get_soundtrack_iframe(entity)
     clean = entity.downcase
     output = []
-    get_spotify_id(entity).each do |id|
+    get_spotify_id(clean).each do |id|
       output << id[1]
     end
     output
