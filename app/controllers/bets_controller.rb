@@ -4,7 +4,7 @@ class BetsController < ApplicationController
 
   def recent
     last_poll = params[:time].to_i - 5
-    @bets = Bet.get_recent(last_poll, params[:time])
+    @bets = Bet.get_recent(last_poll, params[:time].to_i)
   end
 
   def create

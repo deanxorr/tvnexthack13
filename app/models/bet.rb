@@ -14,7 +14,7 @@
 #
 
 class Bet < ActiveRecord::Base
-  attr_accessible :body, :time, :tms_id
+  attr_accessible :body, :time, :tms_id, :user_name, :wager
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   before_save { self.user_email.downcase! }
@@ -27,7 +27,7 @@ class Bet < ActiveRecord::Base
   validates :wager, presence: true
 
   def self.get_recent(s_time, e_time)
-    @bet = Bet.where("time < ?", e_time).where("time > ?", s_time)
+    @bet = Bet.where("time > ?", s_time).where("time < ?", e_time)
   end
 
 end
