@@ -4,8 +4,10 @@ class GetGlue
     TOKEN = Tvnexthack::Application.config.get_glue_token
 
     def get_stream_from_name(name)
-      tms_title = Tms.tms_id(name)['title'].gsub(' ','_')
-      query = "#{tms_title.downcase}/feed?"
+      #tms_title = TMS.tms_id(name)['title'].gsub(' ','_')
+      #query = "#{tms_title.downcase}/feed?"
+
+      query = "#{name.downcase.gsub(' ','_')}/feed?"
       request(BASE_URL + query)['response']['interactions']
     end
 

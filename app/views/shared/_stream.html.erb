@@ -1,0 +1,13 @@
+<table>
+<% @stream.each do |i| %>
+<tr>
+  <td>
+    <img src="<%= i['user']['images']['avatar'] %>"></img>
+    <%= i['user']['username'] %>
+  </td>
+  <td>
+    <%= i['comment'] %>
+  </td>
+</tr>
+<% end %>
+</table>
