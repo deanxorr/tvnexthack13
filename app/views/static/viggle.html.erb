@@ -1,10 +1,15 @@
 <h1>static#viggle</h1>
 <span id="status"></span>
+<p>List of review sites</p>
+<ul id="reviews-list"></ul>
 
 <script>
-(function() {
+function() {
     function onBridgeIsReady() {
         // Display our apps title in the header bar
+            console.log("bridge is ready");
+            $('#status').append("bridge is ready");
+            console.log(VAPP);
 
             VAPP.setTitleBarTitle(function(message) {}, 'Reviews');
 
@@ -60,5 +65,7 @@
 
     // Kick off script
     document.addEventListener('VAPPReady', onBridgeIsReady, true);
-})();
+    console.log("event listener set");
+    $('#status').append("event listener set");
+};
 </script>
