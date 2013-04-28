@@ -3,6 +3,8 @@ Tvnexthack::Application.routes.draw do
   resources :bets, only: [:create, :index, :show]
   match ':entity/soundtrack' => 'soundtracks#show'
   match ':entity/stream' => 'streams#show'
+  match '/viggle', to: 'static#viggle'
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
