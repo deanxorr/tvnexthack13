@@ -1,7 +1,10 @@
 #TVnexthack 2013
 ##_JP and Dean_
 
-We don't know what it is yet, but it's gonna be awesome.
+#dashboard picture#
+![Dasbhoard](https://dl.dropboxusercontent.com/u/62813824/defiance_desktop_web.png)
+
+
 
                                     oooo   ooo
                                    $   $  $   $
@@ -22,7 +25,7 @@ We don't know what it is yet, but it's gonna be awesome.
        ooo$$$"o$$$$$$$$$$$$$$ "$o    o   o$$$o   $ $ o$
     o$$$$$$$$$$$$$$$$$$$$$$$$    "oo  o      ""o  "$ $
    $$$$$$$$$$$$$$$$$$$$$$$$$$      "$o   o$$"""$     " oo""o
-o""""$$$$$$$$$$$$$$$$$$$$$$"         ""$o"$o          "   o$
+""""$$$$$$$$$$$$$$$$$$$$$$"         ""$o"$o          "   o$
      "$$$$$$$$""""$""$$$""              "$oo$""$o     o$"""
       $$$$$$$"                           $""""$"  o""""
        $"""""$ooooo        ooooo$$$$$$$     o$" o"
