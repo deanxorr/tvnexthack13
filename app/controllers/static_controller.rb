@@ -4,5 +4,6 @@ class StaticController < ApplicationController
 	end
 
 	def viggle
+    render :layout => "stripped"
 	end
 end

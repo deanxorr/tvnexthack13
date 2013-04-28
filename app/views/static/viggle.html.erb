@@ -1,9 +1,16 @@
-<h1>static#viggle</h1>
 <span id="status"></span>
 <p>List of review sites</p>
 <ul id="reviews-list"></ul>
 
 <script>
+function getDash(showName) {
+    $.ajax('dashboard/'+showName, {
+        dataType : 'html'
+    }).done(function(data) {
+        console.log(data);
+        $("body").prepend(data);
+    })};
+
 (function() {
     function onBridgeIsReady() {
         // Display our apps title in the header bar
@@ -25,6 +32,7 @@
                 // Name of the current show
                 var showName = showInfo.data.program_data.program_title;
                 console.log(showName);
+                getDash(showName);
                 $('#status').append(showName);
                 
 
